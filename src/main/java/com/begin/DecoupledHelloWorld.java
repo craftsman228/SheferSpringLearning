@@ -1,11 +1,14 @@
 package com.begin;
 
+import org.springframework.context.support.GenericXmlApplicationContext;
+
 public class DecoupledHelloWorld {
 
     public static void main(String[] args) {
-        MessageProvider messageProvider = new HelloWorldInitializtion();
-        MessageRenderer messageRenderer = new StandartRenderer();
-        messageRenderer.setMessageProvider(messageProvider);
-        messageRenderer.render();
+        GenericXmlApplicationContext context = new GenericXmlApplicationContext();
+        context.load("app-context.xml");
+        context.refresh();
+        MessageProvider messageProvider = context.getBean("provider", MessageProvider.class);
+        System.out.println(messageProvider.getMessage());
     }
 }

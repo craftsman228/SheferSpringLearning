@@ -1,23 +1,23 @@
 package com.begin;
 
+import org.springframework.stereotype.Service;
+
+@Service("renderer")
 public class StandartRenderer implements MessageRenderer {
 
     private MessageProvider messageProvider;
 
-    @Override
     public void render() {
         if (messageProvider == null){
-            throw new RuntimeException("You should set the property class " + StandartRenderer.class.getClass());
+            throw new RuntimeException("You should set the property class " + StandartRenderer.class.getName());
         }
         System.out.println(messageProvider.getMessage());
     }
 
-    @Override
     public void setMessageProvider(MessageProvider messageProvider) {
         this.messageProvider = messageProvider;
     }
 
-    @Override
     public MessageProvider getMessageProvider() {
         return this.messageProvider;
     }
