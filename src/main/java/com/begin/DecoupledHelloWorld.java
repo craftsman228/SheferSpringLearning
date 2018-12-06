@@ -6,9 +6,9 @@ public class DecoupledHelloWorld {
 
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        context.load("app-context.xml");
+        context.load("configurable-message-bean.xml");
         context.refresh();
-        MessageProvider messageProvider = context.getBean("provider", MessageProvider.class);
+        MessageProvider messageProvider = context.getBean("messageProvider", MessageProvider.class);
         System.out.println(messageProvider.getMessage());
     }
 }

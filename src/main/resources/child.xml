@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:с="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="target1" class="com.begin.chapter3.HierarchialApplicationContext.SimpleTarget"
+          p:val-ref="injectBeanParent"/>
+    <bean id="target2" class="com.begin.chapter3.HierarchialApplicationContext.SimpleTarget"
+          p:val-ref="injectBeanParent"/>
+    <bean id="target3" class="com.begin.chapter3.HierarchialApplicationContext.SimpleTarget"
+          p:val-ref="injectBeanParent">
+        <property name="val">
+            <ref parent="injectBean"/>
+        </property>
+    </bean>
+
+    <bean id="injectBean" class="java.lang.String" с:_0="Bean In Child"/>
+
+</beans>

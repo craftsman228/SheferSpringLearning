@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="foo" class="com.begin.chapter3.Autolink.Foo"/>
+
+   <bean id="targetByName" autowire="byName" class="com.begin.chapter3.Autolink.Target"
+         lazy-init="true"/>
+
+    <bean id="targetByType" autowire="byType" class="com.begin.chapter3.Autolink.Target"
+                                   lazy-init="true"/>
+
+    <bean id="targetByConstructor" autowire="constructor" class="com.begin.chapter3.Autolink.Target"
+          lazy-init="true"/>
+
+</beans>
