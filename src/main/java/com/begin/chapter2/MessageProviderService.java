@@ -1,4 +1,4 @@
-package com.begin;
+package com.begin.chapter2;
 
 import org.springframework.stereotype.Service;
 
