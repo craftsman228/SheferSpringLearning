@@ -37,10 +37,10 @@ public class MessageDirectFactoryBean implements FactoryBean<MessageDigest>, Ini
 
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        context.load("factory-bean.xml");
+        context.load("message-digest-factory.xml");
         context.refresh();
 
-        MessageDagester messageDagester = (MessageDagester) context.getBean("digester");
-        messageDagester.digest("hello kaban");
+        MessageDagester digester = (MessageDagester) context.getBean("digester");
+        digester.digest("asssss");
     }
 }
